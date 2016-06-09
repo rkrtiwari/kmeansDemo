@@ -10,7 +10,12 @@ kmeansObj <-  kmeans(obs, centers = 2)
 plot(x,y, col= kmeansObj$cluster)
 
 ## Hierarchical Clustering
-
+x <- seq(from=1,to=10,length.out = 10)
+y1 <- rnorm(5, 4, 0.5)
+y2 <- rnorm(5, 8, 0.5)
+y <- c(y1,y2)
+plot(x,y)
+obs <- data.frame(x,y)
 distM <- dist(obs)
 clusters <- hclust(distM, method = "ward.D")
 plot(clusters)
